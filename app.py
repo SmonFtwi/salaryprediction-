@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 #from prediction import predict
 import joblib as jb
-
+import sklearn
 model = jb.load('rf_model.sav')
 
 st.title('Predict salary base on education level')
