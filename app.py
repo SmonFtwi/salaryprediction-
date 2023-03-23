@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 #from prediction import predict
-#import joblib as jb
+import joblib as jb
 
-#model = jb.load('rf_model.sav')
+model = jb.load('rf_model.sav')
 
 st.title('Predict salary base on education level')
 st.text_input('input your id', '12345')
@@ -29,8 +29,8 @@ def predict():
     x.columns = education_levels
     x.insert(0, 'Age', age)
     st.write(x)
-    #prediction = model.predict(x)[0]
-    #st.write(f"Your predicted salary is {prediction}")
+    prediction = model.predict(x)[0]
+    st.write(f"Your predicted salary is {prediction}")
 
 
 but = st.button('Predict', on_click=predict())
